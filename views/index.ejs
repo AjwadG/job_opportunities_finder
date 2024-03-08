@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Job Finder</title>
+</head>
+<body>
+    <h1 >Avilable jobs</h1>
+    <div class="jobs_container" >
+    <% jobs.forEach(job => { %>
+        <div class="job">
+            <h2>Company Name: <%= job.company %></h2>
+            <h3>Location: <%= job.actualCity %></h3>
+
+            <h3>Role: <%= job.name %></h3>
+            <h3>Tech Categories: <%= job.techCategory %></h3>
+            <h3>Annual Salary: from <%= job.annualSalaryFrom %> to <%= job.annualSalaryTo %> </h3>
+            <h3>Remote: <%= job.isFullRemote ? "Fully Remote" : "Not Remote"%></h3>
+
+            <h3>Company size: <%= job.companySize %></h3>
+            <h3>language: <%= job.language %></h3>
+            <h3><a href="<%= job.redirectJobUrl %>" target="_blank">Job page </a></h3>
+            
+            <h3>Perks</h3>
+            <ul>
+            <% job.perkKeys.forEach(petk => { %>
+                <li><%= petk %></li>
+            <% }); %>
+            </ul>
+
+            <h3>Technologies</h3>
+            <ul>
+            <% job.technologies.forEach(technology => { %>
+                <li><%= technology %></li>
+            <% }); %>
+            </ul>
+        </div>
+    <% }); %>
+    </div> 
+</body>
+</html>

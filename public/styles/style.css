@@ -1,0 +1,18 @@
+.jobs_container {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+h1 {
+    text-align: center;
+}
+.job {
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 15px;
+    width: 40%;
+    padding: 15px;
+}
